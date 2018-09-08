@@ -66,7 +66,7 @@ public void actionPerformed(ActionEvent e) {
 		showPictureFromTheInternet("https://c1.staticflickr.com/5/4112/5170590074_714d36db83_b.jpg");
 	}
 	if (buttonpressed == button2) {
-		showPictureFromTheInternet("https://www.google.com/search?biw=843&bih=449&tbm=isch&sa=1&ei=U-qKW6zkEeWkjwTXgJsI&q=scary+image&oq=scary+image&gs_l=img.3..0l10.117467.122617..123353...1.0..0.149.1036.11j1......0....1..gws-wiz-img.......0i67j0i30j0i5i30.Imkvp63qHPQ#imgrc=YLxUFvuKsOp-yM:");
+		showPictureFromTheInternet("https://i.ytimg.com/vi/CtB4_dU38hM/hqdefault.jpg");
 	}
 }
 
