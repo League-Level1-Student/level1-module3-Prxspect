@@ -1,20 +1,24 @@
 
 public class Calculator {
 
-	public void add() {
-		
+	public int add(int num1, int num2, int ans) {
+		ans = num1 + num2;
+		return ans;
 	}
 	
-	public void multiply() {
-		
+	public int multiply(int num1, int num2, int ans) {
+		ans = num1 * num2;
+		return ans;
 	}
 	
-	public void subtract() {
-		
+	public int subtract(int num1, int num2, int ans) {
+		ans = num1 - num2;
+		return ans;
 	}
 	
-	public void divide() {
-		
+	public int divide(int num1, int num2, int ans) {
+		ans = num1 / num2;
+		return ans;
 	}
 }
 

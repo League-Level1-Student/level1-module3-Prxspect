@@ -1,4 +1,6 @@
 /BookOfIllusions.class
+/Calculator.class
+/CalculatorRunner.class
 /ChuckleClicker.class
 /CowTimer.class
 /FortuneTeller.class
@@ -13,14 +15,12 @@
 /down.jpg
 /extra/
 /fortune teller.png
+/fortuneteller.jpg
 /gridworld.jar
+/illusion1.jpg
+/illusion2.jpg
 /jeopardy.wav
 /left.jpg
 /moo.wav
 /right.jpg
 /up.jpg
-/illusion1.jpg
-/illusion2.jpg
-/fortuneteller.jpg
-/Calculator.class
-/CalculatorRunner.class
