@@ -15,6 +15,7 @@ public class PigLatinTranslator implements ActionListener {
 	JButton button = new JButton();
 	JPanel panel = new JPanel();
 	PigTranslator pt = new PigTranslator();
+	
 	public static void main(String[] args) {
 	PigLatinTranslator plt = new PigLatinTranslator();
 	plt.translator();
@@ -46,7 +47,8 @@ public class PigLatinTranslator implements ActionListener {
 		JButton buttonpressed = (JButton)e.getSource();
 		if (buttonpressed == button) {
 			String translatedWord = pt.translate(word);
-			translatedWord.
+			System.out.println(translatedWord);
+			text2.setText(translatedWord);
 			
 		}
 	}
