@@ -61,6 +61,7 @@ public class WhackAMole implements ActionListener {
 		
 		if ("Mole!".equals(text)) {
         	 playSound("hit.wav");
+        	 molesWhacked++;
          }
          else {
         	 speak("Missed");
@@ -71,7 +72,7 @@ public class WhackAMole implements ActionListener {
         	 frame.dispose();
         	 JOptionPane.showMessageDialog(null, "You Lose.");
          }
-		 else if (molesWhacked == 10) {
+		 if (molesWhacked == 10) {
 			 endGame(timeAtStart, molesWhacked);
 		 }
 		 else {
