@@ -10,6 +10,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 public class SlotMachine implements ActionListener {
@@ -20,6 +21,8 @@ public class SlotMachine implements ActionListener {
 	JLabel slot2 = new JLabel();
 	JLabel slot3 = new JLabel();
 	JButton spin = new JButton();
+	JLabel winCounter = new JLabel();
+	int numOfWins = 0;
 	static Random rand = new Random();
 	static int num = rand.nextInt(3);
 	
@@ -28,12 +31,19 @@ public class SlotMachine implements ActionListener {
 		SlotMachine sm = new SlotMachine();
 		sm.getRandomImage();
 		sm.makeFrame();
-		
+		sm.makeButton();
 		
 	}
 	
 
-
+void makeButton() {
+	
+	spin.setText("SPIN!");
+	spin.setPreferredSize(new Dimension(100,75));
+	spin.addActionListener(this);
+	
+}
+	
     void makeFrame() {
 
     	frame.setVisible(true);
@@ -42,26 +52,23 @@ public class SlotMachine implements ActionListener {
     	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     	frame.setPreferredSize(new Dimension(480,280));
     	frame.pack();
-   
-    panel.setBackground(new Color(0,0,0));	
+  
+    panel.setBackground(new Color(240,240,255));	
     panel.add(slot1);
     	panel.add(slot2);
-    	panel.add(slot3);
+    	panel.add(slot3); 
     	panel.add(spin);
+    	panel.add(winCounter);
+    	winCounter.setText("Win Counter: " +numOfWins);
     	slot1.setPreferredSize(new Dimension(150,150));
     	slot2.setPreferredSize(new Dimension(150,150));
     	slot3.setPreferredSize(new Dimension(150,150));
     	
-    	spin.setText("SPIN!");
-    	spin.setPreferredSize(new Dimension(100,75));
-    	spin.addActionListener(this);
-    	
-    	
-    	
-}
-    
+    }
+   
     void getRandomImage() {
     
+    	int num = rand.nextInt(3);
     	if (num == 0) {
     		slot1 = showImage("cherry.png");
     	}
@@ -69,29 +76,34 @@ public class SlotMachine implements ActionListener {
     		slot1 = showImage("orange.jpeg");
     	}
     if (num == 2) {
-     	slot1 = showImage("7.jpeg");
+     	slot1 = showImage("lemon.png");
     }
     
-    num = rand.nextInt(3);
-    if (num == 0) {
+    int num2 = rand.nextInt(3);
+    if (num2 == 0) {
 		slot2 = showImage("cherry.png");
 	}
-	if (num == 1) {
+	if (num2 == 1) {
 		slot2 = showImage("orange.jpeg");
 	}
-    if (num == 2) {
- 	slot2 = showImage("7.jpeg");
+    if (num2 == 2) {
+ 	slot2 = showImage("lemon.png");
     }
     
-    num = rand.nextInt(3);
-    if (num == 0) {
+   int num3 = rand.nextInt(3);
+    if (num3 == 0) {
 		slot3 = showImage("cherry.png");
 	}
-	if (num == 1) {
+	if (num3 == 1) {
 		slot3 = showImage("orange.jpeg");
 	}
-    if (num == 2) {
- 	slot3 = showImage("7.jpeg");
+    if (num3 == 2) {
+ 	slot3 = showImage("lemon.png");
+    }
+    
+    if (num == num2 && num == num3 && num2 == num3) {
+    	JOptionPane.showMessageDialog(null, "You Win! Keep Playing!");
+    	numOfWins++;
     }
     	
     }
@@ -112,7 +124,9 @@ public class SlotMachine implements ActionListener {
 		JButton buttonpressed = (JButton)e.getSource();
 	    if (buttonpressed == spin) {
 	    	frame.dispose();
+	    	frame.remove(panel);
 	    	 	getRandomImage();
+	    	 	panel = new JPanel();
 	    	 	makeFrame();
 	   
 	    }
